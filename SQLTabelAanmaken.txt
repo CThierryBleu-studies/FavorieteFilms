@@ -1,0 +1,8 @@
+CREATE TABLE `films` (
+  `title` varchar(255) NOT NULL,
+  `year` int NOT NULL,
+  `score` int NOT NULL,
+  `review` varchar(400) DEFAULT NULL,
+  CHECK (score >= 0 AND score <= 10),
+  PRIMARY KEY (`title`)
+) /*ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci*/ -> niet verplicht
