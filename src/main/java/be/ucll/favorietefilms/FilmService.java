@@ -1,6 +1,8 @@
 package be.ucll.favorietefilms;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/films")
 public class FilmService {
-    private FilmRepository filmRepository = new FilmRepository();
-    List<Film> films = new ArrayList<>();
+//    List<Film> films = new ArrayList<>();
 //    {
 //        Film film1 = new Film();
 //        film1.setTitle("Shrek");
@@ -27,6 +28,8 @@ public class FilmService {
 //        this.addFilm(film1);
 //        this.addFilm(film2);
 //    }
+
+    private FilmRepository filmRepository = new FilmRepository();
 
     public void addFilm(Film pFilm) {
         filmRepository.insert(pFilm.getTitle(), pFilm.getYear(), pFilm.getScore(), pFilm.getReview());
